@@ -31,7 +31,7 @@ Built with <b>Python</b>, <b>Pyrogram</b>, and <b>Py-TgCalls</b> — optimized f
 
 <hr>
 
-## 🔥 Features
+## 🔥𝐅𝖾𝖺𝗍𝗎𝗋𝖾𝗌
 
 - 🎧 Stream low-latency **audio & video** in real time to Telegram group video chats
 - 🌐 Supports **YouTube, Spotify, Apple Music, SoundCloud, Resso & M3U8**
@@ -42,15 +42,15 @@ Built with <b>Python</b>, <b>Pyrogram</b>, and <b>Py-TgCalls</b> — optimized f
 
 <hr>
 
-## ☁️ Deployment
+## ☁️ 𝐃𝖾𝗉𝗅𝗈𝗒𝗆𝖾𝗇𝗍
 
-### ✔️ Prerequisites
+### ✔️ 𝐏𝗋𝖾𝗋𝖾𝗊𝗎𝗂𝗌𝗂𝗍𝖾𝗌
 
 - [Python 3.10+](https://www.python.org) installed
 - [ffmpeg](https://ffmpeg.org/) installed on your system
 - Required variables from [`sample.env`](https://github.com/TeamAlfaBots/OpusMusic/blob/master/sample.env)
 
-| Variable | Required | Description |
+| 𝐕𝖺𝗋𝗂𝖺𝖻𝗅𝖾   | 𝐑𝖾𝗊𝗎𝗂𝗋𝖾𝖽 | 𝐃𝖾𝗌𝖼𝗋𝗂𝗉𝗍𝗂𝗈𝗇 |
 |----------|----------|-------------|
 | `API_ID` | ✅ | Telegram API ID from [my.telegram.org](https://my.telegram.org) |
 | `API_HASH` | ✅ | Telegram API Hash |
@@ -126,7 +126,7 @@ uv run python -m opus
 
 <hr>
 
-## ⚙️ Configuration
+## ⚙️ 𝐂𝗈𝗇𝖿𝗂𝗀𝗎𝗋𝖺𝗍𝗂𝗈𝗇
 
 Edit `.env` or set variables in your hosting environment:
 
@@ -149,7 +149,7 @@ SESSION=BQgfh...AA
 
 <hr>
 
-## 🧐 Usage
+## 🧐 𝐔𝗌𝖺𝗀𝖾
 
 1. Add the bot to your Telegram group
 2. Promote it as **admin** with invite users permission
@@ -158,7 +158,7 @@ SESSION=BQgfh...AA
 <details>
 <summary>Commands overview</summary>
 
-| Command | Description |
+| 𝐂𝗈𝗆𝗆𝖺𝗇𝖽 | 𝐃𝖾𝗌𝖼𝗋𝗂𝗉𝗍𝗂𝗈𝗇 |
 |---------|-------------|
 | `/play [song/link]` | Play audio in the video chat |
 | `/vplay [song/link]` | Play video in the video chat |
@@ -173,7 +173,7 @@ SESSION=BQgfh...AA
 
 <hr>
 
-## 🛠️ Troubleshooting
+## 🛠️ 𝐓𝗋𝗈𝗎𝖻𝗅𝖾𝗌𝗁𝗈𝗈𝗍𝗂𝗇𝗀
 
 <details>
 <summary>Common Issues</summary>
@@ -199,7 +199,7 @@ brew install ffmpeg
 
 <hr>
 
-## ❤️ Contributing
+## ❤️ 𝐂𝗈𝗇𝗍𝗋𝗂𝖻𝗎𝗍𝗂𝗇𝗀
 
 Contributions are welcome!
 
@@ -211,20 +211,20 @@ Contributions are welcome!
 
 <hr>
 
-## 🗒️ License
+## 🗒️ 𝐋𝗂𝖼𝖾𝗇𝗌𝖾
 
 This project is licensed under the **MIT License** — see [LICENSE](https://github.com/TeamAlfaBots/OpusMusic/blob/master/LICENSE) for details.
 
 <hr>
 
-## 🤞 Updates & Support
+## 🤞 𝐔𝗉𝖽𝖺𝗍𝖾𝗌 & 𝐒𝗎𝗉𝗉𝗈𝗋𝗍
 
 - 📢 [Updates Channel](https://t.me/TeamAlfaBots)
 - 💬 [Support Group](https://t.me/TeamAlfaBotsSupport)
 
 <hr>
 
-## 👀 Acknowledgements
+## 👀 𝐀𝖼𝗄𝗇𝗈𝗐𝗅𝖾𝖽𝗀𝖾𝗆𝖾𝗇𝗍𝗌
 
 - Inspired by other open-source Telegram music bots
 - Thanks to all the [contributors](https://github.com/TeamAlfaBots/OpusMusic/graphs/contributors)

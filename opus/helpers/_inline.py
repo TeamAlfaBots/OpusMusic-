@@ -220,15 +220,15 @@ class Inline:
         return self.ikm(
             [
                 [
-                    self.ikb(text="👑 Owner", url="https://t.me/realitywasalie",
+                    self.ikb(text="👑 𝐎𝗐𝗇𝖾𝗋 ", url="https://t.me/realitywasalie",
                              style=enums.ButtonStyle.PRIMARY),
-                    self.ikb(text="💻 Developer", url="https://t.me/Ucan_callme_X",
+                    self.ikb(text="💻 𝐃𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝗋", url="https://t.me/Ucan_callme_X",
                              style=enums.ButtonStyle.PRIMARY),
                 ],
                 [
-                    self.ikb(text="🔧 Admin", url="https://t.me/Prexep",
+                    self.ikb(text="🔧 𝐒𝗈𝗎𝗋𝖼𝖾 𝐂𝗈𝖽𝖾", url="https://t.me/Prexep",
                              style=enums.ButtonStyle.PRIMARY),
-                    self.ikb(text="💬 Ask me", url="https://t.me/II_DEAD_SOUL",
+                    self.ikb(text="💬 𝐀𝗇𝗒 𝐐𝗎𝖺𝗌𝗍𝗂𝗈𝗇", url="https://t.me/II_DEAD_SOUL",
                              style=enums.ButtonStyle.PRIMARY),
                 ],
                 [

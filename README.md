@@ -31,7 +31,7 @@ Built with <b>Python</b>, <b>Pyrogram</b>, and <b>Py-TgCalls</b> — optimized f
 
 <hr>
 
-## 🔥𝐅𝖾𝖺𝗍𝗎𝗋𝖾𝗌
+## 🔥𝐅𝖾𝖺𝗍𝗎𝗋𝖾𝗌 ➠
 
 - 🎧 Stream low-latency **audio & video** in real time to Telegram group video chats
 - 🌐 Supports **YouTube, Spotify, Apple Music, SoundCloud, Resso & M3U8**
@@ -42,9 +42,9 @@ Built with <b>Python</b>, <b>Pyrogram</b>, and <b>Py-TgCalls</b> — optimized f
 
 <hr>
 
-## ☁️ 𝐃𝖾𝗉𝗅𝗈𝗒𝗆𝖾𝗇𝗍
+## ☁️ 𝐃𝖾𝗉𝗅𝗈𝗒𝗆𝖾𝗇𝗍 ➠
 
-### ✔️ 𝐏𝗋𝖾𝗋𝖾𝗊𝗎𝗂𝗌𝗂𝗍𝖾𝗌
+### ✔️ 𝐏𝗋𝖾𝗋𝖾𝗊𝗎𝗂𝗌𝗂𝗍𝖾𝗌 ➠
 
 - [Python 3.10+](https://www.python.org) installed
 - [ffmpeg](https://ffmpeg.org/) installed on your system
@@ -126,7 +126,7 @@ uv run python -m opus
 
 <hr>
 
-## ⚙️ 𝐂𝗈𝗇𝖿𝗂𝗀𝗎𝗋𝖺𝗍𝗂𝗈𝗇
+## ⚙️ 𝐂𝗈𝗇𝖿𝗂𝗀𝗎𝗋𝖺𝗍𝗂𝗈𝗇 ➠
 
 Edit `.env` or set variables in your hosting environment:
 
@@ -149,7 +149,7 @@ SESSION=BQgfh...AA
 
 <hr>
 
-## 🧐 𝐔𝗌𝖺𝗀𝖾
+## 🧐 𝐔𝗌𝖺𝗀𝖾 ➠
 
 1. Add the bot to your Telegram group
 2. Promote it as **admin** with invite users permission
@@ -173,7 +173,7 @@ SESSION=BQgfh...AA
 
 <hr>
 
-## 🛠️ 𝐓𝗋𝗈𝗎𝖻𝗅𝖾𝗌𝗁𝗈𝗈𝗍𝗂𝗇𝗀
+## 🛠️ 𝐓𝗋𝗈𝗎𝖻𝗅𝖾𝗌𝗁𝗈𝗈𝗍𝗂𝗇𝗀 ➠
 
 <details>
 <summary>Common Issues</summary>
@@ -199,7 +199,7 @@ brew install ffmpeg
 
 <hr>
 
-## ❤️ 𝐂𝗈𝗇𝗍𝗋𝗂𝖻𝗎𝗍𝗂𝗇𝗀
+## ❤️ 𝐂𝗈𝗇𝗍𝗋𝗂𝖻𝗎𝗍𝗂𝗇𝗀 ➠
 
 Contributions are welcome!
 
@@ -211,13 +211,13 @@ Contributions are welcome!
 
 <hr>
 
-## 🗒️ 𝐋𝗂𝖼𝖾𝗇𝗌𝖾
+## 🗒️ 𝐋𝗂𝖼𝖾𝗇𝗌𝖾 ➠
 
 This project is licensed under the **MIT License** — see [LICENSE](https://github.com/TeamAlfaBots/OpusMusic/blob/master/LICENSE) for details.
 
 <hr>
 
-## 🤞 𝐔𝗉𝖽𝖺𝗍𝖾𝗌 & 𝐒𝗎𝗉𝗉𝗈𝗋𝗍
+## 🤞 𝐔𝗉𝖽𝖺𝗍𝖾𝗌 & 𝐒𝗎𝗉𝗉𝗈𝗋𝗍 ➠
 
 - 📢 [Updates Channel](https://t.me/TeamAlfaBots)
 - 💬 [Support Group](https://t.me/TeamAlfaBotsSupport)

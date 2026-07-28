@@ -226,15 +226,15 @@ class Inline:
                              style=enums.ButtonStyle.PRIMARY),
                 ],
                 [
-                    self.ikb(text="🔧 𝐒𝗈𝗎𝗋𝖼𝖾 𝐂𝗈𝖽𝖾", url="https://t.me/Prexep",
+                    self.ikb(text="🔧 𝐒𝗈𝗎𝗋𝖼𝖾 𝐂𝗈𝖽𝖾", url="https://github.com/TeamAlfaBots/OpusMusic-",
                              style=enums.ButtonStyle.PRIMARY),
                     self.ikb(text="💬 𝐀𝗇𝗒 𝐐𝗎𝖺𝗌𝗍𝗂𝗈𝗇", url="https://t.me/II_DEAD_SOUL",
                              style=enums.ButtonStyle.PRIMARY),
                 ],
                 [
-                    self.ikb(text=lang.get("back", "🔙 Back"), callback_data="source_back",
+                    self.ikb(text=lang.get("back", "⇲ 𝐁𝖺𝖼𝗄"), callback_data="source_back",
                              style=enums.ButtonStyle.SUCCESS),
-                    self.ikb(text=lang.get("close", "❌ Close"), callback_data="help close",
+                    self.ikb(text=lang.get("close", "❌ 𝐂𝗅𝗈𝗌𝖾"), callback_data="help close",
                              style=enums.ButtonStyle.DANGER),
                 ],
             ]

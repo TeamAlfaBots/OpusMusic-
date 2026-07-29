@@ -7,34 +7,38 @@ import random
 from datetime import datetime
 
 from pyrogram import enums, filters, types
+from pyrogram.errors import PeerIdInvalid, ChatWriteForbidden
 
 from opus import app, config, db, lang
 from opus.helpers import buttons, utils
 
-# ── Optional config ──────────────────────────────────────────────────────────
+# ── Optional config ───────────────────────────────────────────────────────────
 STICKER_ID: str | None = getattr(config, "STICKER_ID", None)
 
-_REACTIONS = ["❤️", "🔥", "⚡", "🎉", "🚀", "👏", "🥰", "😍", "💯"]
+_REACTIONS = ["🎵", "✨", "💎", "🎶", "👑", "🌟", "🎼", "💫", "🎧"]
 
 _LOADING_FRAMES = [
-    "⚡ Initializing...",
-    "🎵 Loading Modules...",
-    "✅ Ready",
+    "░░░░░░░░░░  <b>ᴄσηηєᴄᴛɪηɢ...</b>",
+    "███░░░░░░░  <b>ʟσᴧᴅɪηɢ ϻσᴅᴜʟєꜱ...</b>",
+    "██████░░░░  <b>ꜱʏηᴄɪηɢ ᴅᴧᴛᴧʙᴧꜱєꜱ...</b>",
+    "█████████░  <b>ᴧʟϻσꜱᴛ ʀєᴧᴅʏ...</b>",
+    "██████████  <b>✦ ᴡєʟᴄσϻє ᴛσ σᴘᴜꜱϻᴜꜱɪᴄ ✦</b>",
 ]
 
 _TIPS = [
-    "💡 Use /play <song name> to stream music.",
-    "💡 Use /lyrics to fetch song lyrics.",
-    "💡 Create your own playlists with /playlist.",
-    "💡 Tweak your experience with /settings.",
-    "💡 Check what's queued with /queue.",
+    "✦ ꜱᴛʀєᴧϻ ϻᴜꜱɪᴄ ᴡɪᴛʜ <code>/play &lt;song&gt;</code>",
+    "✦ ᴘʟᴧʏ ᴠɪᴅєσꜱ ᴡɪᴛʜ <code>/vplay &lt;song&gt;</code>",
+    "✦ ᴠɪєᴡ ᴄᴜʀʀєηᴛ qᴜєᴜє ᴡɪᴛʜ <code>/queue</code>",
+    "✦ ꜱᴋɪᴘ ᴛʀᴧᴄᴋꜱ ɪηꜱᴛᴧηᴛʟʏ ᴡɪᴛʜ <code>/skip</code>",
+    "✦ ꜰɪηє-ᴛᴜηє ʏσᴜʀ єxᴘєʀɪєηᴄє ᴠɪᴧ <code>/settings</code>",
 ]
+
+_DIVIDER = "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄"
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
 def get_start_img() -> str:
-    """Return a random image from START_IMG list or the single configured URL."""
     if isinstance(config.START_IMG, list) and config.START_IMG:
         return random.choice(config.START_IMG)
     return config.START_IMG
@@ -43,12 +47,12 @@ def get_start_img() -> str:
 def _time_greeting() -> str:
     hour = datetime.now().hour
     if 5 <= hour < 12:
-        return "🌅 Good Morning"
+        return "🌅 ɢσσᴅ ϻσʀηɪηɢ"
     if 12 <= hour < 17:
-        return "☀️ Good Afternoon"
+        return "🌞 ɢσσᴅ ᴧꜰᴛєʀησση"
     if 17 <= hour < 21:
-        return "🌇 Good Evening"
-    return "🌙 Good Night"
+        return "🌆 ɢσσᴅ єᴠєηɪηɢ"
+    return "🌙 ɢσσᴅ ηɪɢʜᴛ"
 
 
 def _premium_caption(base_text: str, first_name: str) -> str:
@@ -56,24 +60,34 @@ def _premium_caption(base_text: str, first_name: str) -> str:
     tip = random.choice(_TIPS)
     version = getattr(config, "VERSION", "2.0")
     return (
-        f"{greeting}, {first_name}! 👋\n\n"
+        f"✦ {greeting}, <b>{first_name}</b> 👋\n\n"
         f"{base_text}\n\n"
-        f"━━━━━━━━━━━━━━━━━\n"
-        f"🤖 **{app.name}** `v{version}`\n"
-        f"{tip}"
+        f"{_DIVIDER}\n"
+        f"<b>◈ {app.name}</b>  <code>v{version}</code>\n"
+        f"{tip}\n"
+        f"{_DIVIDER}"
+    )
+
+
+def _group_caption(base_text: str) -> str:
+    version = getattr(config, "VERSION", "2.0")
+    return (
+        f"{base_text}\n\n"
+        f"{_DIVIDER}\n"
+        f"<b>◈ {app.name}</b>  <code>v{version}</code>\n"
+        f"✦ ʜɪɢʜ-qᴜᴧʟɪᴛʏ • ʟσᴡ-ʟᴧᴛєηᴄʏ • ᴧʟᴡᴧʏꜱ ση\n"
+        f"{_DIVIDER}"
     )
 
 
 async def _react(message: types.Message, emoji: str) -> None:
-    """Send a message reaction; ignore all failures silently."""
     try:
-        await message.react(emoji)
+        await message.react(emoji, big=True)
     except Exception:
         pass
 
 
 async def _send_sticker(message: types.Message) -> None:
-    """Send a sticker, wait 2 s, delete it — skip if STICKER_ID not set."""
     if not STICKER_ID:
         return
     try:
@@ -85,13 +99,15 @@ async def _send_sticker(message: types.Message) -> None:
 
 
 async def _loading_animation(message: types.Message) -> None:
-    """Show 3-frame loading animation then delete the message."""
     try:
-        loading = await message.reply_text(_LOADING_FRAMES[0])
+        loading = await message.reply_text(
+            _LOADING_FRAMES[0],
+            parse_mode=enums.ParseMode.HTML,
+        )
         for frame in _LOADING_FRAMES[1:]:
-            await asyncio.sleep(0.4)
-            await loading.edit_text(frame)
-        await asyncio.sleep(0.3)
+            await asyncio.sleep(0.35)
+            await loading.edit_text(frame, parse_mode=enums.ParseMode.HTML)
+        await asyncio.sleep(0.4)
         await loading.delete()
     except Exception:
         pass
@@ -122,25 +138,25 @@ async def start(_, message: types.Message):
 
     private = message.chat.type == enums.ChatType.PRIVATE
 
-    # 1. Typing animation
+    # 1. Typing action
     try:
         await app.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
         await asyncio.sleep(0.3)
     except Exception:
         pass
 
-    # 2. React to /start message
-    asyncio.create_task(_react(message, random.choice(_REACTIONS)))
+    # 2. React to /start message (await — nahi skip hoga)
+    await _react(message, random.choice(_REACTIONS))
 
-    # 3. Premium loading animation (non-blocking wait before welcome)
+    # 3. Loading animation (private only)
     if private:
         await _loading_animation(message)
 
-    # 4. Sticker animation
+    # 4. Sticker (private only)
     if private:
         asyncio.create_task(_send_sticker(message))
 
-    # 5 & 6. Build caption (base lang text + premium enhancements)
+    # 5. Build caption
     base_text = (
         message.lang["start_pm"].format(message.from_user.first_name, app.name)
         if private
@@ -150,13 +166,13 @@ async def start(_, message: types.Message):
     _text = (
         _premium_caption(base_text, message.from_user.first_name)
         if private
-        else base_text
+        else _group_caption(base_text)
     )
 
-    # 7. Buttons — unchanged
+    # 6. Buttons
     key = buttons.start_key(message.lang, private)
 
-    # 5. Random welcome image + 9. Photo fallback
+    # 7. Photo + caption + buttons (original position)
     sent = None
     try:
         sent = await message.reply_photo(
@@ -170,13 +186,10 @@ async def start(_, message: types.Message):
             text=_text,
             reply_markup=key,
             quote=not private,
+            parse_mode=enums.ParseMode.HTML,
         )
 
-    # 8. React to welcome message with ❤️
-    if sent:
-        asyncio.create_task(_react(sent, "❤️"))
-
-    # 10. Save user / chat
+    # 8. Save user / chat
     if private:
         if await db.is_user(message.from_user.id):
             return
